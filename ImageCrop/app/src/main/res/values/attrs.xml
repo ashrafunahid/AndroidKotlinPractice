@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="ncrop_ncropView">
+
+        <!--Crop image view-->
+        <attr name="ncrop_aspect_ratio_x" format="float"/>
+        <attr name="ncrop_aspect_ratio_y" format="float"/>
+
+        <!--Overlay view-->
+        <attr name="ncrop_show_oval_crop_frame" format="boolean"/>
+        <attr name="ncrop_circle_dimmed_layer" format="boolean"/>
+        <attr name="ncrop_dimmed_color" format="color"/>
+
+        <attr name="ncrop_grid_stroke_size" format="dimension"/>
+        <attr name="ncrop_grid_color" format="color"/>
+        <attr name="ncrop_grid_row_count" format="integer"/>
+        <attr name="ncrop_grid_column_count" format="integer"/>
+        <attr name="ncrop_show_grid" format="boolean"/>
+
+        <attr name="ncrop_frame_stroke_size" format="dimension"/>
+        <attr name="ncrop_frame_color" format="color"/>
+        <attr name="ncrop_show_frame" format="boolean"/>
+
+    </declare-styleable>
+
+    <declare-styleable name="ncrop_AspectRatioTextView">
+
+        <attr name="ncrop_artv_ratio_title" format="string"/>
+
+        <attr name="ncrop_artv_ratio_x" format="float"/>
+        <attr name="ncrop_artv_ratio_y" format="float"/>
+
+    </declare-styleable>
+    
+</resources>

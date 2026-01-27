@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">ToDo</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="what_to_do">What to do?</string>
+    <string name="low">Low</string>
+    <string name="normal">Normal</string>
+    <string name="high">High</string>
+    <string name="date">Date</string>
+    <string name="time">Time</string>
+    <string name="save">Save</string>
+    <string name="todo_name">ToDo name</string>
+    <string name="_12_12_2026_10_10pm">12-12-2026 10:10pm</string>
+    <string name="dot_menu">⋮</string>
+    <string name="delete">Delete</string>
+</resources>

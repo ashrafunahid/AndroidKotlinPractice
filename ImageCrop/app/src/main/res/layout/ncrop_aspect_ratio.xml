@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout style="@style/ncrop_WrapperIconState">
+
+    <com.ashrafunahid.imagecrop.views.widgets.AspectRatioTextView
+        style="@style/ncrop_TextViewCropAspectRatio"/>
+
+</FrameLayout>

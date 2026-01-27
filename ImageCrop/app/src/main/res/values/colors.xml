@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="blaze_orange">#FF6300</color>
+    <color name="ebony_clay">#20242F</color>
+    <color name="heather">#B3BECE</color>
+
+    <!--nCrop Activity-->
+    <color name="color_toolbar">@color/white</color>
+    <color name="color_toolbar_widget">@color/black</color>
+    <color name="color_widget">@color/black</color>
+    <color name="color_widget_active">@color/white</color>
+    <color name="color_active_controls_color">@color/blaze_orange</color>
+    <color name="color_inactive_controls_color">@color/heather</color>
+    <color name="color_widget_rotate_mid_line">@color/blaze_orange</color>
+    <color name="color_widget_rotate_angle">@color/ebony_clay</color>
+    <color name="color_active_aspect_ratio">@color/blaze_orange</color>
+    <color name="color_inactive_aspect_ratio">@color/ebony_clay</color>
+    <color name="color_widget_background">@color/ebony_clay</color>
+    <color name="color_widget_text">@color/blaze_orange</color>
+    <color name="color_progress_wheel_line">@color/ebony_clay</color>
+    <color name="color_crop_background">@color/black</color>
+
+<!--    Crop View-->
+    <color name="color_default_crop_grid">#80ffffff</color>
+    <color name="color_default_crop_frame">#ffffff</color>
+    <color name="color_default_dimmed">#8c000000</color>
+    <color name="color_default_logo">#4f212121</color>
+</resources>
