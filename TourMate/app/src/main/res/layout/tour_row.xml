@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="tourModel"
+            type="com.ashrafunahid.tourmate.models.TourModel" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/tourRowItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="6dp"
+        android:layout_margin="7dp"
+        app:cardCornerRadius="7dp"
+        app:contentPadding="16dp"
+        android:focusable="true"
+        android:clickable="true"
+        android:foreground="?selectableItemBackground">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/row_tour_title"
+                tools:text="Test Tour"
+                android:text="@{tourModel.title}"
+                android:textSize="16dp"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/row_tour_date"
+                tools:text="Test Tour"
+                app:setTimeStamp="@{tourModel.createdOn}"
+                android:textColor="@color/purple_500"
+                android:layout_below="@id/row_tour_title"
+                android:textStyle="italic" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:checked="@{tourModel.completed}"
+                android:id="@+id/row_tour_complete" />
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "191126812108",
+    "project_id": "tourmate-a9535",
+    "storage_bucket": "tourmate-a9535.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:191126812108:android:45b45079acec3aa0c79969",
+        "android_client_info": {
+          "package_name": "com.ashrafunahid.tourmate"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWuYMjHtr6JRGml83ZHSqsIIWISWFeh2U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

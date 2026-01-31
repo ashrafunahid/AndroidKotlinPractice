@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="tourModel"
+            type="com.ashrafunahid.tourmate.models.TourModel" />
+        <variable
+            name="totalExpense"
+            type="Integer" />
+        <variable
+            name="totalMoments"
+            type="Integer" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".fragments.TourDetailsFragment">
+
+        <androidx.cardview.widget.CardView
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="5dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/teal_700"
+            app:contentPadding="4dp">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/detailsTourNameTV"
+                    style="@style/TextAppearance.AppCompat.Headline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:text="@{tourModel.title}"
+                    android:textColor="@color/white"
+                    tools:text="Tour Name" />
+
+                <TextView
+                    android:id="@+id/detailsTourDestinationTV"
+                    style="@style/TextAppearance.AppCompat.Subhead"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:text="@{tourModel.destination}"
+                    android:textColor="@color/white"
+                    tools:text="Destination" />
+
+                <TextView
+                    android:id="@+id/detailsTourBudgetTV"
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:textColor="@color/white"
+                    android:text="@{`BDT`+String.valueOf(tourModel.budget)}"
+
+                    tools:text="BDT 25000" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="5dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/teal_700"
+            app:contentPadding="4dp">
+
+            <RelativeLayout
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/detailsExpenseTitleTV"
+                    android:text="Expenses"
+                    android:fontFamily="sans-serif-black"
+                    android:textColor="@color/white"
+                    style="@style/TextAppearance.AppCompat.Headline" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/detailsTotalExpenseTitleTV"
+                    android:text="Total Expense: "
+                    android:fontFamily="sans-serif-black"
+                    android:textColor="@color/white"
+                    android:layout_below="@id/detailsExpenseTitleTV"
+                    style="@style/TextAppearance.AppCompat.Body1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/detailsTotalExpenseAmountTV"
+                    tools:text="BDT 5000"
+                    android:fontFamily="sans-serif-black"
+                    android:textColor="@color/white"
+                    android:text="@{`BDT`+String.valueOf(totalExpense)}"
+                    android:layout_marginStart="5dp"
+                    android:layout_toEndOf="@id/detailsTotalExpenseTitleTV"
+                    android:layout_below="@id/detailsExpenseTitleTV"
+                    style="@style/TextAppearance.AppCompat.Body1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/detailsRemainingBudgetTitleTV"
+                    android:text="Remaining Budget: "
+                    android:fontFamily="sans-serif-black"
+                    android:textColor="@color/white"
+                    android:layout_below="@id/detailsTotalExpenseTitleTV"
+                    style="@style/TextAppearance.AppCompat.Body1" />
+
+                <TextView
+                    android:id="@+id/detailsRemainigBudgetAmountTV"
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/detailsTotalExpenseAmountTV"
+                    android:layout_marginStart="5dp"
+                    android:layout_toEndOf="@id/detailsRemainingBudgetTitleTV"
+                    android:fontFamily="sans-serif-black"
+                    android:text="@{`BDT`+String.valueOf(tourModel.budget - totalExpense)}"
+                    android:textColor="@color/white"
+                    tools:text="BDT 20000" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/detailsAddExpenseBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:backgroundTint="@color/white"
+                    android:layout_below="@id/detailsRemainingBudgetTitleTV"
+                    android:src="@android:drawable/ic_input_add"
+                    app:fabSize="mini" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/detailsViewExpenseBtn"
+                    app:backgroundTint="@color/white"
+                    android:src="@drawable/baseline_list_24"
+                    android:layout_below="@id/detailsRemainingBudgetTitleTV"
+                    android:layout_toEndOf="@id/detailsAddExpenseBtn"
+                    android:layout_marginStart="10dp"
+                    app:fabSize="mini" />
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:cardBackgroundColor="@color/teal_700"
+            android:layout_margin="5dp"
+            app:cardElevation="4dp"
+            app:contentPadding="4dp">
+
+            <RelativeLayout
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/detailsMomentsHeaderTV"
+                    android:text="Moments"
+                    android:fontFamily="sans-serif-black"
+                    android:textColor="@color/white"
+                    style="@style/TextAppearance.AppCompat.Headline" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/detailsTotalMomentsTV"
+                    android:text="Total Images: "
+                    android:fontFamily="sans-serif-black"
+                    android:textColor="@color/white"
+                    android:layout_below="@id/detailsMomentsHeaderTV"
+                    style="@style/TextAppearance.AppCompat.Body1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/detailsTotalImageCountTV"
+                    tools:text="0"
+                    android:fontFamily="sans-serif-black"
+                    android:textColor="@color/white"
+                    android:text="@{String.valueOf(totalMoments)}"
+                    android:layout_marginStart="5dp"
+                    android:layout_toEndOf="@id/detailsTotalMomentsTV"
+                    android:layout_below="@id/detailsMomentsHeaderTV"
+                    style="@style/TextAppearance.AppCompat.Body1" />
+
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/captureImageBtn"
+                    app:backgroundTint="@color/white"
+                    android:src="@drawable/baseline_photo_camera_24"
+                    android:layout_below="@id/detailsTotalMomentsTV"
+                    app:fabSize="mini" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/galleryBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/detailsTotalImageCountTV"
+                    android:layout_marginStart="10dp"
+                    app:backgroundTint="@color/white"
+                    android:layout_toEndOf="@id/captureImageBtn"
+                    android:src="@drawable/baseline_photo_library_24"
+                    app:fabSize="mini" />
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</layout>
