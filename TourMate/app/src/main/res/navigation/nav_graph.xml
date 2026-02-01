@@ -12,7 +12,7 @@
         tools:layout="@layout/fragment_landing" >
         <action
             android:id="@+id/tour_list_action"
-            app:destination="@id/tourFragment"
+            app:destination="@id/nav_tour"
             app:popUpTo="@id/landingFragment"
             app:popUpToInclusive="true" />
         <action
@@ -28,12 +28,12 @@
         tools:layout="@layout/fragment_login" >
         <action
             android:id="@+id/login_to_tour_action"
-            app:destination="@id/tourFragment"
+            app:destination="@id/nav_tour"
             app:popUpTo="@id/loginFragment"
             app:popUpToInclusive="true" />
     </fragment>
     <fragment
-        android:id="@+id/tourFragment"
+        android:id="@+id/nav_tour"
         android:name="com.ashrafunahid.tourmate.fragments.TourFragment"
         android:label="fragment_tour"
         tools:layout="@layout/fragment_tour" >
@@ -61,8 +61,8 @@
             android:defaultValue="null" />
     </fragment>
     <fragment
-        android:id="@+id/weatherFragment"
-        android:name="com.ashrafunahid.tourmate.WeatherFragment"
+        android:id="@+id/nav_weather"
+        android:name="com.ashrafunahid.tourmate.fragments.WeatherFragment"
         android:label="fragment_weather"
         tools:layout="@layout/fragment_weather" />
 </navigation>

@@ -70,6 +70,9 @@ dependencies {
 
 //    Glide Image View
     implementation(libs.glide)
+    annotationProcessor(libs.compiler)
+//    implementation("com.github.bumptech.glide:glide:4.12.0")
+//    annotationProcessor("com.github.bumptech.glide:compiler:4.12.0")
 
 //    Retrofit Library
     implementation("com.squareup.retrofit2:retrofit:3.0.0")

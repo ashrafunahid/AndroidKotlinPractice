@@ -3,6 +3,7 @@ package com.ashrafunahid.tourmate.bindingadapters
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
+import com.bumptech.glide.Glide
 import com.google.firebase.Timestamp
 import java.text.SimpleDateFormat
 import java.util.Locale
@@ -25,7 +26,7 @@ fun setFormattedWeatherDate(tv: TextView, date: Long) {
 fun setWeatherIcon(iv: ImageView, icon: String?) {
     icon?.let {
         val url = "http://openweathermap.org/img/wn/${icon}@2x.png"
-//        Glide.with(iv).load(url).into(iv)
+        Glide.with(iv).load(url).into(iv)
     }
 
 }

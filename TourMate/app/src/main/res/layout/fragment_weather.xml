@@ -6,7 +6,7 @@
     <data>
         <variable
             name="current"
-            type="com.seip.android.tourmatestarterapp.model.CurrentWeatherModel" />
+            type="com.ashrafunahid.tourmate.models.CurrentWeatherModel" />
     </data>
 
     <RelativeLayout
