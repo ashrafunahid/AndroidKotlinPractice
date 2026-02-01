@@ -11,6 +11,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.ashrafunahid.tourmate.R
 import com.ashrafunahid.tourmate.adapters.TourAdapter
 import com.ashrafunahid.tourmate.databinding.FragmentTourBinding
+import com.ashrafunahid.tourmate.utils.details_screen
+import com.ashrafunahid.tourmate.utils.tour_status_update
 import com.ashrafunahid.tourmate.viewmodels.LoginViewModel
 import com.ashrafunahid.tourmate.viewmodels.TourViewModel
 
@@ -26,9 +28,18 @@ class TourFragment : Fragment() {
         binding = FragmentTourBinding.inflate(inflater, container, false)
 
         val adapter = TourAdapter { id, action, status ->
-            val tourId = id
-            val navAction = TourFragmentDirections.tourDetailsAction(tourId)
-            findNavController().navigate(navAction)
+            when (action) {
+                details_screen -> {
+                    val tourId = id
+                    val navAction = TourFragmentDirections.tourDetailsAction(tourId)
+                    findNavController().navigate(navAction)
+                }
+
+                tour_status_update -> {
+                    tourViewModel.updateTourStatus(id, status)
+                }
+            }
+
         }
 
         binding.tourRecyclerview.layoutManager = LinearLayoutManager(activity)

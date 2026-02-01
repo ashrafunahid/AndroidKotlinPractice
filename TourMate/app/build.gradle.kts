@@ -66,4 +66,18 @@ dependencies {
     implementation("com.google.firebase:firebase-analytics")
     implementation("com.google.firebase:firebase-auth")
     implementation("com.google.firebase:firebase-firestore")
+    implementation("com.google.firebase:firebase-storage")
+
+//    Glide Image View
+    implementation(libs.glide)
+
+//    Retrofit Library
+    implementation("com.squareup.retrofit2:retrofit:3.0.0")
+    implementation("com.squareup.retrofit2:converter-moshi:3.0.0")
+//    Moshi Converter
+    implementation("com.squareup.moshi:moshi-kotlin:1.15.2")
+
+//  Location
+    implementation("com.google.android.gms:play-services-location:21.3.0")
+
 }
