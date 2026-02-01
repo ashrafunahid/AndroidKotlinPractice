@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import com.ashrafunahid.tourmate.R
 import com.ashrafunahid.tourmate.databinding.FragmentWeatherBinding
@@ -24,8 +25,7 @@ import com.google.android.gms.location.LocationServices
 class WeatherFragment : Fragment() {
 
     private lateinit var binding: FragmentWeatherBinding
-    private lateinit var client: FusedLocationProviderClient
-    private val locationViewModel: LocationViewModel by viewModels()
+    private val locationViewModel: LocationViewModel by activityViewModels()
     private val weatherViewModel: WeatherViewModel by viewModels()
     private lateinit var preference: SharedPreferences
 
@@ -34,8 +34,8 @@ class WeatherFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         preference = requireActivity().getSharedPreferences("weather_prefs", Context.MODE_PRIVATE)
-        client = LocationServices.getFusedLocationProviderClient(requireActivity())
         binding = FragmentWeatherBinding.inflate(inflater, container, false)
+
         binding.tempSwitch.isChecked = getTempStatus(preference)
         weatherViewModel.tempStatus = getTempStatus(preference)
 
@@ -47,12 +47,6 @@ class WeatherFragment : Fragment() {
             binding.current = currentWeatherModel
         })
 
-        if (isLocationPermissionGranted(requireActivity())) {
-            detectUserLocation()
-        } else {
-            requestLocationPermission(requireActivity())
-        }
-
         binding.tempSwitch.setOnCheckedChangeListener { btn, isChecked ->
             setTempStatus(isChecked, preference.edit())
             weatherViewModel.tempStatus = isChecked
@@ -60,26 +54,6 @@ class WeatherFragment : Fragment() {
         }
 
         return binding.root
-    }
-
-    private fun detectUserLocation() {
-        client.lastLocation.addOnSuccessListener { location ->
-            locationViewModel.setNewLocation(location)
-        }
-    }
-
-    override fun onRequestPermissionsResult(
-        requestCode: Int,
-        permissions: Array<out String?>,
-        grantResults: IntArray
-    ) {
-        if (requestCode == LOCATION_PERMISSION_REQUEST_CODE) {
-            if (grantResults.contains(PackageManager.PERMISSION_GRANTED)) {
-                detectUserLocation()
-            } else {
-                // Permission denied. Handle now
-            }
-        }
     }
 
 }
